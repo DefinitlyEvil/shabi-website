@@ -11,7 +11,7 @@ if (location.search) {
 
         if (paramParts.length === 1) {
             entries.push({
-                name: paramParts[0],
+                name: decodeURIComponent(paramParts[0]),
                 color: DEFAULT_COLOR,
                 href: ""
             })
@@ -21,7 +21,7 @@ if (location.search) {
         let argParts = paramParts[1].split(',', 2)
         if (argParts.length === 1) {
             entries.push({
-                name: paramParts[0],
+                name: decodeURIComponent(paramParts[0]),
                 color: DEFAULT_COLOR,
                 href: argParts[0]
             })
@@ -29,7 +29,7 @@ if (location.search) {
         }
 
         entries.push({
-            name: paramParts[0],
+            name: decodeURIComponent(paramParts[0]),
             color: argParts[0],
             href: argParts[1]
         })
